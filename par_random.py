@@ -60,7 +60,7 @@ def run_trial(profile_features,labels,this_train_sizes,results,num_trials,n):
         cur_X_train, cur_y_train = profile_features,labels
       reg = RandomForestClassifier().fit(cur_X_train,cur_y_train)
       pred_probs_tmp = reg.predict_proba(profile_features)
-      pred_probs = np.zeros((len(pred_probs_tmp),3))
+      pred_probs = np.zeros((len(pred_probs_tmp),2))
       pred_probs[:pred_probs_tmp.shape[0],:pred_probs_tmp.shape[1]] = pred_probs_tmp
       results[num_trials*len(this_train_sizes)*n  + j*len(this_train_sizes) + i] = log_loss(labels,pred_probs)
 
