@@ -24,7 +24,7 @@ def get_test_partition(data,split):
   return data[int(split*len(data)):len(data)]
 
 ds_train, ds_info = tfds.load(
-    'iris',
+    'german_credit_numeric',
     split=['train'],
     shuffle_files=False,
     as_supervised=True,
